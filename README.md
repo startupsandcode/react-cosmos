@@ -21,13 +21,25 @@ npm install
 
 The template can be run in development, or in production. For development, use the following workflow.
 
-### Start the Express Server
+### Visual Studio Code
+
+A launch configuration is provided for Visual Studio Code. Run the "Launch Client/Server" process from the Debug pane.
+
+![Launch Client/Server](http://i.imgur.com/IylljbF.png)
+
+This will run both the front-end and backend portions of the application so that all debugging can be done in Visual Studio Code. Check out [this video](https://www.youtube.com/watch?v=eSGNOQgK5oA) for a walkthrough if you need it.
+
+> Note that this requires the [Debugger For Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension to be installed. VS Code should prompt for that when the workspace is first opened.
+
+### Running Manually
+
+#### Start the Express Server
 
 ```bash
-node server/server.js
+npm run server
 ```
 
-### Start Create React App
+#### Start Create React App
 
 In a different terminal tab...
 

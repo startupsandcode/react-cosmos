@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
-    "morgan": "^1.8.2",
     "jade": "~1.11.0",
+    "morgan": "^1.8.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "debug": "node --nolazy --inspect-brk=5858 server/server.js & npm start",
+    "server": "node server/server.js",
     "build": "react-scripts build && mv build server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
