@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "compounds": [
     {
-      "name": "Launch Client/Server",
+      "name": "Launch Browser/Server",
       "configurations": [
-        "Launch Chrome",
-        "Launch Program"
+        "Launch Browser",
+        "Launch Server"
       ]
     }
   ],
@@ -16,7 +16,7 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome",
+      "name": "Launch Browser",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceRoot}/src"
@@ -24,7 +24,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch Server",
       "program": "${workspaceRoot}/server/server.js"
     }
   ]
