@@ -23,15 +23,19 @@ The template can be run in development, or in production. For development, use t
 
 ### Visual Studio Code
 
-A launch configuration is provided for Visual Studio Code. Run the "Launch Client/Server" process from the Debug pane.
+A launch configuration is provided for Visual Studio Code. Run the "Launch Browser/Server" process from the Debug pane.
 
-![Launch Client/Server](http://i.imgur.com/IylljbF.png)
+![Launch Browser/Server](http://i.imgur.com/Z2rBglS.png)
 
 This will run both the front-end and backend portions of the application so that all debugging can be done in Visual Studio Code. Check out [this video](https://www.youtube.com/watch?v=eSGNOQgK5oA) for a walkthrough if you need it.
 
 > Note that this requires the [Debugger For Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension to be installed. VS Code should prompt for that when the workspace is first opened.
 
-### Running Manually
+## OR
+
+If you are not using VS Code (Why would you [not be](https://medium.com/burke-knows-words/the-greatest-visual-studio-code-setup-in-the-world-22aa30fb8e8f)?) you can run it manually from the terminal/command line.
+
+### Run It Manually
 
 #### Start the Express Server
 
