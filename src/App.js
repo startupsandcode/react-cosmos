@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Video from './components/Video';
+import Header from './components/Header';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,8 @@ class App extends Component {
       .then(json => {
         let videos = json.items.map((video, index) => {
           let details = video.snippet;
+
+          // pull out the order number from the title
           let order = details.title.match(/Part\s*(.*?)\s*:/);
 
           return {
@@ -26,12 +29,12 @@ class App extends Component {
           };
         });
 
-        // sort videos by title
+        // sort videos by order field
         videos = videos.sort((a, b) => {
           return a.order - b.order;
         });
 
-        this.setState({ videos: videos.sort() });
+        this.setState({ videos: videos });
       })
       .catch(err => {
         console.log(err);
@@ -41,27 +44,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <section className="section hero is-small is-light">
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <img src="images/cosmos-db.png" alt="" />
-              <h1 className="title">React Cosmos DB</h1>
-              <h2 className="is-size-3">
-                Learn how to build applications with React, Node.js and Cosmos
-                DB
-              </h2>
-              <br />
-              <p className="is-size-5 has-text-white-ter">
-                In this course, you'll learn how to set up an Express / React
-                project, build a user interface and connect to CosmosDB: the
-                lightning fast NoSQL database from Microsoft Azure.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="section is-medium">
+        <Header />
+        <section className="section">
           <div className="columns" />
           {this.state.videos.map((video, index) => {
+            // if this is an even number video, render it and the one
+            // before it inside of a "columns" tag
             return index % 2 ? this.renderVideos(index) : '';
           })}
         </section>
@@ -70,6 +58,7 @@ class App extends Component {
   }
 
   renderVideos(index) {
+    // get two videos, the current index and previous item
     let vids = [this.state.videos[index - 1], this.state.videos[index]];
 
     return (
